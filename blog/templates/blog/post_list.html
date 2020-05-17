@@ -10,31 +10,14 @@
 <body>
 
     <h1>Blog | Django Girls</h1>
-
-    <div>
-        <p>publicado: 17.05.2020, 17:10</p>
-        <p><a href="#">Meu primeiro post</a></p>
-        <p>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Cevadis im
-            ampola pa arma uma pindureta. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Praesent
-            vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.</p>
-    </div>
-
-    <div>
-        <p>publicado: 17.05.2020, 17:10</p>
-        <p><a href="#">Meu primeiro post</a></p>
-        <p>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Cevadis im
-            ampola pa arma uma pindureta. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Praesent
-            vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.</p>
-    </div>
-
-
-    <div>
-        <p>publicado: 17.05.2020, 17:10</p>
-        <p><a href="#">Meu primeiro post</a></p>
-        <p>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Cevadis im
-            ampola pa arma uma pindureta. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Praesent
-            vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.</p>
-    </div>
+    
+    {% for post in posts %}
+<div>
+    <p>Pulicado em: {{ post.published_date }}</p>
+    <h2><a href="#">{{ post.title }}</a></h2>
+    <p>{{ post.text |linebreaksbr }}</p>
+</div>
+{% endfor %}
 
 </body>
 
